@@ -1,0 +1,29 @@
+import random
+
+player1 = input("enter player 1 name")
+player2 = input("enter player 2 name")
+
+print("It's a 2 player game, a random number of stick is defined, each turn a player remove a number of sticks between 1 and 3")
+print("user that remove last stick lose")
+
+stick_number = random.randint(1, 10)
+stick_remove = 0
+
+while stick_number > 0:
+    
+    while stick_remove not in [1, 2, 3]:
+        stick_remove = int(input(player1 + " must enter the number of stick you remove "))
+
+
+    stick_number -= int(stick_remove)
+    stick_remove = 0
+
+    while stick_remove not in [1, 2, 3]:
+            stick_remove = int(input(player2 + " must enter the number of stick you remove"))
+           
+                
+    stick_number -= int(stick_remove)  
+    stick_remove = 0
+        
+              
+print("you the looser")
