@@ -12,7 +12,7 @@ elif not url.startswith("https://www."):
 page = requests.get(url)
 
 oui = str(BeautifulSoup(page.content, 'html.parser'))
-urls = re.findall('(https?://(?:[-\w.]|(?:%[\da-fA-F]{2}))+[^\s)\(\"",;*\']*)', oui)
+urls = re.findall('(https?://(?:[-\w.]|(?:%[\da-fA-F]{2}))+[^\s)\(\"",;*\']*)', oui) #Thanks GPT for the regex <3
 
 with open('link.txt', "w") as file:
     for url in urls:
